@@ -3,7 +3,7 @@
  */
 class Solution {
 public:
-    ListNode* addTwoNumbers(ListNode* l1, ListNode* l2) {
+	ListNode* addTwoNumbers(ListNode* l1, ListNode* l2) {
 		ListNode *ret = nullptr, *now = nullptr, *prev = nullptr;
 		while(l1 != nullptr && l2 != nullptr) {
 			now = new ListNode(l1->val + l2->val);
@@ -21,17 +21,17 @@ public:
 		return ret;
 	}
 
-	void checkCarry(ListNode* l){
+	void checkCarry(ListNode* l) {
 		ListNode *now = l, *prev = nullptr;
 		int carry = 0;
-		while(now){
+		while(now) {
 			now->val += carry;
 			carry = now->val / 10;
 			now->val %= 10;
 			prev = now;
 			now = now->next;
 		}
-		while(carry){
+		while(carry) {
 			now = new ListNode(carry % 10);
 			prev->next = now;
 			carry /= 10;

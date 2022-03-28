@@ -1,9 +1,9 @@
-#include <string>
 #include <sstream>
+#include <string>
 
 class Solution {
 public:
-    int myAtoi(string s) {
+	int myAtoi(string s) {
 		std::stringstream ss(s);
 		ss >> std::ws;
 		int ret = 0;
