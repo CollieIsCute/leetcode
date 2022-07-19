@@ -1,5 +1,6 @@
 /**
- * I did a trick. "if l1 or l2 ends, then ret list use the other one's last node as return list.
+ * I did a trick. "if l1 or l2 ends, then ret list use the other one's last node
+ * as return list.
  */
 class Solution {
 public:
