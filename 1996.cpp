@@ -11,11 +11,11 @@ public:
 	int ret = 0;
 	sort(properties.begin(), properties.end(), Solution::compare);
 	int max = INT_MIN;
-	for(int i = 0; i < properties.size(); i++){
-	    if(max > properties[i][1])
+	for(const auto& p: properties){
+	    if(max > p[1])
 		ret++;
-	    else if (max < properties[i][1])
-		max = properties[i][1];
+	    else if (max < p[1])
+		max = p[1];
 	}
 	return ret;
     }
