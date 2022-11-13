@@ -28,14 +28,9 @@ public:
 	}
 
 	double findMedian() {
-		int a = *mid;
-		if(list_size % 2)
-			return (double)a;
-		else{
-			int b = *(++mid);
-			--mid;
-			return ((double)a + b) / 2.0;
-		}
+		auto mid_ = mid;
+		advance(mid_, !(list_size % 2));
+		return ((double)*mid + *mid_) / 2.0;
 	}
 };
 
