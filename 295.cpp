@@ -1,36 +1,28 @@
-#include <iostream>
-#include <list>
+#include <queue>
+#include <utility>
 using namespace std;
 
 class MedianFinder {
-	list<int> l;
-	list<int>::iterator mid = l.begin();
-	long long list_size;
+	priority_queue<int> max;
+	priority_queue<int, vector<int>, std::greater<int>> min;
 
 public:
-	MedianFinder(): list_size(0){}
+	MedianFinder() {}
 
 	void addNum(int num) {
-		auto iter = l.begin();
-		for(;iter != l.end() && (*iter < num); ++iter)
-			;
-
-		if(iter == mid)
-			mid = l.insert(iter, num);
-		else{
-			l.insert(iter, num);
-			if(*mid >= num)
-				--mid;
+		max.push(num);
+		min.push(move(max.top()));
+		max.pop();
+		while(min.size() > max.size()+1){
+			max.push(move(min.top()));
+			min.pop();
 		}
-
-		if(++list_size >= 3 && list_size % 2)
-			++mid;
 	}
 
 	double findMedian() {
-		auto mid_ = mid;
-		advance(mid_, !(list_size % 2));
-		return ((double)*mid + *mid_) / 2.0;
+		if(min.size()>max.size())
+			return min.top();
+		return ((double)max.top() + min.top()) / 2.0;
 	}
 };
 
