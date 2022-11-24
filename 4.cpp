@@ -4,7 +4,8 @@ class Solution {
 public:
 	double findMedianSortedArrays(vector<int>& nums1, vector<int>& nums2) {
 		const int total_size = nums1.size() + nums2.size();
-		const int less_median_index = (total_size % 2) ? total_size / 2 : total_size / 2 - 1;
+		const int less_median_index =
+			(total_size % 2) ? total_size / 2 : total_size / 2 - 1;
 		bool there_are_odd_numbers = total_size % 2;
 		for(int i = 0; i < less_median_index; i++)
 			get_and_pop_biggest(nums1, nums2);

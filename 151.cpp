@@ -1,5 +1,5 @@
-#include<string>
-#include<sstream>
+#include <sstream>
+#include <string>
 using namespace std;
 
 class Solution {
@@ -8,7 +8,7 @@ public:
 		stringstream buf(s);
 		string word, all;
 		while(buf >> word >> ws)
-			all =  word + (all!=""?" ":"") + all;
+			all = word + (all != "" ? " " : "") + all;
 		return all;
 	}
 };

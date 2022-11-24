@@ -13,14 +13,14 @@ public:
 		max.push(num);
 		min.push(move(max.top()));
 		max.pop();
-		while(min.size() > max.size()+1){
+		while(min.size() > max.size() + 1) {
 			max.push(move(min.top()));
 			min.pop();
 		}
 	}
 
 	double findMedian() {
-		if(min.size()>max.size())
+		if(min.size() > max.size())
 			return min.top();
 		return ((double)max.top() + min.top()) / 2.0;
 	}

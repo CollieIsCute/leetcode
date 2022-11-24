@@ -10,7 +10,7 @@ public:
 			else if(numbers[small] + numbers[big] < target)
 				small++;
 			else {
-				ret = { small + 1, big + 1 };
+				ret = {small + 1, big + 1};
 				return ret;
 			}
 		}

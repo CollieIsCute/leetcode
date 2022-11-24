@@ -35,14 +35,14 @@ bool bfs(Board board, Pos pos, const string& word, int word_index) {
 }  // namespace
 
 class Solution {
-	const vector<pair<int, int>> direct = { { 0, -1 }, { 0, 1 }, { -1, 0 }, { 1, 0 } };
+	const vector<pair<int, int>> direct = {{0, -1}, {0, 1}, {-1, 0}, {1, 0}};
 
 public:
 	bool exist(vector<vector<char>>& board, string word) {
 		bool ret = false;
 		for(size_t i = 0; i < board.size(); i++) {
 			for(size_t j = 0; j < board[i].size(); j++) {
-				ret |= bfs(Board(board), Pos{ i, j }, word, 0);
+				ret |= bfs(Board(board), Pos{i, j}, word, 0);
 			}
 		}
 		return ret;

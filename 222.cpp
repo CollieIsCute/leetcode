@@ -6,10 +6,11 @@
 //     TreeNode *right;
 //     TreeNode() : val(0), left(nullptr), right(nullptr) {}
 //     TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
-//     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
+//     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left),
+//     right(right) {}
 // };
-#include <iostream>
 #include <cmath>
+#include <iostream>
 using namespace std;
 bool left_right_same_height(TreeNode* root) {
 	TreeNode *left = root, *right = root;

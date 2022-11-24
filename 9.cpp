@@ -1,12 +1,12 @@
-#include <vector>
 #include <utility>
+#include <vector>
 using namespace std;
 
 class Solution {
 public:
 	bool isPalindrome(int x) {
 		vector<int> v;
-		if(x<0)
+		if(x < 0)
 			return false;
 		while(x) {
 			v.emplace_back(move(x % 10));
