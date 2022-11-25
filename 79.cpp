@@ -17,7 +17,8 @@ bool safe_pos(const Board& board, const Pos& pos) {
 	return false;
 }
 
-bool dfs(Board& board, const Pos pos, const string& word, const int word_index) {
+bool dfs(Board& board, const Pos pos, const string& word,
+		 const int word_index) {
 	static const vector<pair<int, int>> direct = {
 		{0, -1}, {0, 1}, {-1, 0}, {1, 0}};
 	if(!safe_pos(board, pos))
@@ -26,7 +27,7 @@ bool dfs(Board& board, const Pos pos, const string& word, const int word_index) 
 		if(word_index == word.size() - 1)
 			return true;
 		else {
-			for(const auto& d : direct){
+			for(const auto& d : direct) {
 				board[pos.first][pos.second] = '0';
 				if(dfs(board, add(pos, d), word, word_index + 1))
 					return true;
