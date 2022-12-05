@@ -10,7 +10,7 @@ class Solution {
 public:
 	int minimumAverageDifference(vector<int>& nums) {
 		vector<big_type> all_sum(nums.size(), 0), avg(nums.size(), 0), nums_;
-		for(const auto &n :nums)
+		for(const auto& n : nums)
 			nums_.push_back(n);
 		partial_sum(nums_.begin(), nums_.end(), all_sum.begin());
 		for(int i = 0; i < all_sum.size(); i++) {
