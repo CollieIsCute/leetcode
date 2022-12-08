@@ -10,9 +10,9 @@
 // 		: val(x), left(left), right(right) {}
 // };
 
-bool is_in_range(TreeNode* target, int low, int high){
+bool is_in_range(TreeNode* target, int low, int high) {
 	if(low <= target->val && target->val <= high)
-	cout << target->val << " is in range\n";
+		cout << target->val << " is in range\n";
 	return low <= target->val && target->val <= high;
 }
 
