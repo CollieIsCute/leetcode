@@ -1,5 +1,5 @@
-#include<vector>
-#include<functional>
+#include <functional>
+#include <vector>
 using namespace std;
 // Definition for a binary tree node.
 // struct TreeNode {
@@ -12,13 +12,13 @@ using namespace std;
 // 		: val(x), left(left), right(right) {}
 // };
 
-void get_leaves(TreeNode* root, vector<int>& leaves){
+void get_leaves(TreeNode* root, vector<int>& leaves) {
 	if(!root)
 		return;
-		if(!root->left && !root->right)
-			leaves.push_back(root->val);
-		get_leaves(root->left, leaves);
-		get_leaves(root->right, leaves);
+	if(!root->left && !root->right)
+		leaves.push_back(root->val);
+	get_leaves(root->left, leaves);
+	get_leaves(root->right, leaves);
 }
 
 class Solution {
