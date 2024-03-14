@@ -15,7 +15,7 @@ jobs:
           echo -e "Files found to format = \n\"\"\"\n$FILE_LIST\n\"\"\""
           clang-format --verbose -i --style=Google $FILE_LIST
       - name: commit and push
-        run:
+        run: |
           git add -A
           git commit -m 'Github Action Auto format!'
           git push
