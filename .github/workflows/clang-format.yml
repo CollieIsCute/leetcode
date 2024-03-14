@@ -7,10 +7,11 @@ jobs:
       - name: Setup git config
         run: |
           git config user.name "github-actions: clang-format"
-      - name: clang-format
-        run:
-          apt install clang-format -y
-          export FILE_LIST=$(find . | grep -E ".*(\.ino|\.cpp|\.c|\.h|\.hpp|\.hh)$")
+      - name: Install clang-format
+        run: sudo apt install clang-format -y
+      - name: Set file_list variable
+        run: |
+          export FILE_LIST="$(find . | grep -E ".*(\.ino|\.cpp|\.c|\.h|\.hpp|\.hh)$")"
           echo -e "Files found to format = \n\"\"\"\n$FILE_LIST\n\"\"\""
           clang-format --verbose -i --style=Google $FILE_LIST
       - name: commit and push
