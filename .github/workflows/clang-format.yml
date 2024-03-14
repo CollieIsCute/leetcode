@@ -17,5 +17,5 @@ jobs:
       - name: commit and push
         run:
           git add -A
-          git commit -m 'Github Action:\ Auto format!'
+          git commit -m 'Github Action Auto format!'
           git push
