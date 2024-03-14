@@ -9,6 +9,7 @@ jobs:
           git config user.name "github-actions: clang-format"
       - name: clang-format
         run:
+          apt install clang-format -y
           export FILE_LIST=$(find . | grep -E ".*(\.ino|\.cpp|\.c|\.h|\.hpp|\.hh)$")
           echo -e "Files found to format = \n\"\"\"\n$FILE_LIST\n\"\"\""
           clang-format --verbose -i --style=Google $FILE_LIST
