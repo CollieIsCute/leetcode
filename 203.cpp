@@ -9,15 +9,15 @@
 // };
 
 class Solution {
-public:
-	ListNode* removeElements(ListNode* head, int val) {
-		ListNode** indirect = &head;
-		for(; *indirect;) {
-			if((*indirect)->val == val)
-				*indirect = (*indirect)->next;
-			else
-				indirect = *indirect ? (&(*indirect)->next) : indirect;
-		}
-		return head;
-	}
+ public:
+  ListNode* removeElements(ListNode* head, int val) {
+    ListNode** indirect = &head;
+    for (; *indirect;) {
+      if ((*indirect)->val == val)
+        *indirect = (*indirect)->next;
+      else
+        indirect = *indirect ? (&(*indirect)->next) : indirect;
+    }
+    return head;
+  }
 };

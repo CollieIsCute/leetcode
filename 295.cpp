@@ -3,27 +3,26 @@
 using namespace std;
 
 class MedianFinder {
-	priority_queue<int> max;
-	priority_queue<int, vector<int>, std::greater<int>> min;
+  priority_queue<int> max;
+  priority_queue<int, vector<int>, std::greater<int>> min;
 
-public:
-	MedianFinder() {}
+ public:
+  MedianFinder() {}
 
-	void addNum(int num) {
-		max.push(num);
-		min.push(move(max.top()));
-		max.pop();
-		while(min.size() > max.size() + 1) {
-			max.push(move(min.top()));
-			min.pop();
-		}
-	}
+  void addNum(int num) {
+    max.push(num);
+    min.push(move(max.top()));
+    max.pop();
+    while (min.size() > max.size() + 1) {
+      max.push(move(min.top()));
+      min.pop();
+    }
+  }
 
-	double findMedian() {
-		if(min.size() > max.size())
-			return min.top();
-		return ((double)max.top() + min.top()) / 2.0;
-	}
+  double findMedian() {
+    if (min.size() > max.size()) return min.top();
+    return ((double)max.top() + min.top()) / 2.0;
+  }
 };
 
 /**

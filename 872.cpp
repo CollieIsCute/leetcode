@@ -13,20 +13,18 @@ using namespace std;
 // };
 
 void get_leaves(TreeNode* root, vector<int>& leaves) {
-	if(!root)
-		return;
-	if(!root->left && !root->right)
-		leaves.push_back(root->val);
-	get_leaves(root->left, leaves);
-	get_leaves(root->right, leaves);
+  if (!root) return;
+  if (!root->left && !root->right) leaves.push_back(root->val);
+  get_leaves(root->left, leaves);
+  get_leaves(root->right, leaves);
 }
 
 class Solution {
-public:
-	bool leafSimilar(TreeNode* root1, TreeNode* root2) {
-		vector<int> leaves1, leaves2;
-		get_leaves(root1, leaves1);
-		get_leaves(root2, leaves2);
-		return leaves1 == leaves2;
-	}
+ public:
+  bool leafSimilar(TreeNode* root1, TreeNode* root2) {
+    vector<int> leaves1, leaves2;
+    get_leaves(root1, leaves1);
+    get_leaves(root2, leaves2);
+    return leaves1 == leaves2;
+  }
 };

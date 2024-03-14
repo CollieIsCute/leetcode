@@ -14,23 +14,21 @@
 using namespace std;
 
 class Solution {
-	int all_time_max;
+  int all_time_max;
 
-public:
-	Solution() : all_time_max(INT_MIN) {}
-	int maxPathSum(TreeNode* root) {
-		buttom_up(root);
-		return all_time_max;
-	}
+ public:
+  Solution() : all_time_max(INT_MIN) {}
+  int maxPathSum(TreeNode* root) {
+    buttom_up(root);
+    return all_time_max;
+  }
 
-	int buttom_up(TreeNode* root) {
-		if(!root)
-			return 0;
-		int ret = 0, l_sub_max = buttom_up(root->left),
-			r_sub_max = buttom_up(root->right);
-		ret = root->val + max({0, l_sub_max, r_sub_max});
-		all_time_max =
-			max({all_time_max, ret, root->val + l_sub_max + r_sub_max});
-		return ret;
-	}
+  int buttom_up(TreeNode* root) {
+    if (!root) return 0;
+    int ret = 0, l_sub_max = buttom_up(root->left),
+        r_sub_max = buttom_up(root->right);
+    ret = root->val + max({0, l_sub_max, r_sub_max});
+    all_time_max = max({all_time_max, ret, root->val + l_sub_max + r_sub_max});
+    return ret;
+  }
 };

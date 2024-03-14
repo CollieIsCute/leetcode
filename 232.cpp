@@ -11,34 +11,30 @@
 using namespace std;
 
 class MyQueue {
-	vector<int> stk, stk_inv;
+  vector<int> stk, stk_inv;
 
-public:
-	MyQueue() {}
+ public:
+  MyQueue() {}
 
-	void push(int x) {
-		stk.push_back(x);
-	}
+  void push(int x) { stk.push_back(x); }
 
-	int pop() {
-		peek();
-		int ret = stk_inv.back();
-		stk_inv.pop_back();
-		return ret;
-	}
+  int pop() {
+    peek();
+    int ret = stk_inv.back();
+    stk_inv.pop_back();
+    return ret;
+  }
 
-	int peek() {
-		if(stk_inv.empty()) {
-			while(!stk.empty()) {
-				stk_inv.push_back(stk.back());
-				stk.pop_back();
-			}
-			stk.clear();
-		}
-		return stk_inv.back();
-	}
+  int peek() {
+    if (stk_inv.empty()) {
+      while (!stk.empty()) {
+        stk_inv.push_back(stk.back());
+        stk.pop_back();
+      }
+      stk.clear();
+    }
+    return stk_inv.back();
+  }
 
-	bool empty() {
-		return !(stk.size() + stk_inv.size());
-	}
+  bool empty() { return !(stk.size() + stk_inv.size()); }
 };

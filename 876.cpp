@@ -9,13 +9,13 @@
 // };
 
 class Solution {
-public:
-	ListNode* middleNode(ListNode* head) {
-		ListNode *fast = head, *slow = head;
-		for(bool slow_turn = true; fast->next; slow_turn = !slow_turn) {
-			fast = fast->next;
-			slow = slow_turn ? slow->next : slow;
-		}
-		return slow;
-	}
+ public:
+  ListNode* middleNode(ListNode* head) {
+    ListNode *fast = head, *slow = head;
+    for (bool slow_turn = true; fast->next; slow_turn = !slow_turn) {
+      fast = fast->next;
+      slow = slow_turn ? slow->next : slow;
+    }
+    return slow;
+  }
 };
