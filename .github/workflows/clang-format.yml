@@ -17,5 +17,7 @@ jobs:
       - name: commit and push
         run: |
           git add -A
+          git config user.name "collie"
+          git config user.email collieiscute+github@gmail.com
           git commit -m 'Github Action Auto format!'
           git push
