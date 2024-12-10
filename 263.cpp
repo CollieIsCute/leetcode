@@ -1,6 +1,5 @@
 void remove_factor(int& target, int factor) {
-  for (; target && target == (target / factor) * factor; target /= factor)
-    ;
+  for (; target && target == (target / factor) * factor; target /= factor);
 }
 
 class Solution {

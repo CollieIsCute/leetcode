@@ -14,8 +14,7 @@
 using namespace std;
 bool left_right_same_height(TreeNode* root) {
   TreeNode *left = root, *right = root;
-  for (; left && right; left = left->left, right = right->right)
-    ;
+  for (; left && right; left = left->left, right = right->right);
   return left == right;  // means both nullptr
 }
 

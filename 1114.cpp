@@ -12,16 +12,14 @@ class Foo {
   }
 
   void second(function<void()> printSecond) {
-    while (cnt != 1)
-      ;
+    while (cnt != 1);
     // printSecond() outputs "second". Do not change or remove this line.
     printSecond();
     cnt++;
   }
 
   void third(function<void()> printThird) {
-    while (cnt != 2)
-      ;
+    while (cnt != 2);
     // printThird() outputs "third". Do not change or remove this line.
     printThird();
   }

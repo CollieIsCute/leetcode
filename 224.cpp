@@ -5,8 +5,7 @@ using namespace std;
 // after parsing, put `it` represent the last digit of num
 int parse_num(int& num_head, const string& s) {
   int cnt = 0, sign = (num_head > 0 && s[num_head - 1] == '-') ? -1 : 1;
-  for (; isdigit(s[num_head + cnt]); cnt++)
-    ;
+  for (; isdigit(s[num_head + cnt]); cnt++);
   int n = stoi(s.substr(num_head, cnt));
   num_head += (cnt - 1);
   return n * sign;
